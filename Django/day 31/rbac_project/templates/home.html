@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Product List</h1>
+
+{% for product in products %}
+    <div class="card">
+        <h3>{{ product.name }}</h3>
+        <p>₹ {{ product.price }}</p>
+    </div>
+{% endfor %}
+
+<hr>
+
+<h2>Add Product (Frontend)</h2>
+<form method="post" action="/add/">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Product Name" required>
+    <input type="number" step="0.01" name="price" placeholder="Price" required>
+    <button type="submit">Add</button>
+</form>
+
+</body>
+</html>

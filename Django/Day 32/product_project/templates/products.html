@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product List</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Product Store</h1>
+
+<form method="get">
+    <input type="text" name="search" placeholder="Search product">
+
+    <input type="text" name="category" placeholder="Category">
+
+    <input type="number" name="min_price" placeholder="Min Price">
+    <input type="number" name="max_price" placeholder="Max Price">
+
+    <select name="order">
+        <option value="">Sort By</option>
+        <option value="price">Price Low to High</option>
+        <option value="-price">Price High to Low</option>
+        <option value="name">Name A-Z</option>
+    </select>
+
+    <button type="submit">Apply</button>
+</form>
+
+<div class="products">
+    {% for product in products %}
+        <div class="card">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.category }}</p>
+            <p>₹ {{ product.price }}</p>
+            <small>{{ product.description }}</small>
+        </div>
+    {% empty %}
+        <p>No products found</p>
+    {% endfor %}
+</div>
+
+</body>
+</html>

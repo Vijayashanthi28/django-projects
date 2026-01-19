@@ -1,0 +1,21 @@
+body {
+    font-family: Arial;
+    padding: 20px;
+}
+
+form input, form select {
+    margin: 5px;
+    padding: 5px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+}

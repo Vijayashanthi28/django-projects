@@ -1,0 +1,8 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<a href="/create/">Create Post</a>
+{% for post in posts %}
+<h2><a href="/post/{{ post.id }}/">{{ post.title }}</a></h2>
+<p>{{ post.content|slice:":100" }}</p>
+{% endfor %}
+{% endblock %}

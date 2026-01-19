@@ -1,0 +1,19 @@
+body {
+    font-family: Arial;
+    padding: 20px;
+}
+
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: darkblue;
+}
+
+h2 {
+    color: darkgreen;
+}
+
+li {
+    margin-bottom: 8px;
+}

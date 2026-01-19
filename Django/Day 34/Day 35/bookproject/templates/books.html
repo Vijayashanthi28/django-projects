@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Books</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h1>Book List</h1>
+<ul>
+{% for book in books %}
+<li>{{ book.title }} - {{ book.author }} ({{ book.published_date }})</li>
+{% endfor %}
+</ul>
+</body>
+</html>

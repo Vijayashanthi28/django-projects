@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie List</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Movie Library</h1>
+
+<form method="get">
+    <input type="text" name="genre" placeholder="Genre">
+
+    <input type="number" step="0.1" name="min_rating" placeholder="Min Rating">
+    <input type="number" step="0.1" name="max_rating" placeholder="Max Rating">
+
+    <select name="order">
+        <option value="">Sort By</option>
+        <option value="-rating">Rating High → Low</option>
+        <option value="rating">Rating Low → High</option>
+        <option value="release_date">Release Date Oldest</option>
+        <option value="-release_date">Release Date Newest</option>
+    </select>
+
+    <button type="submit">Apply</button>
+</form>
+
+<div class="movies">
+    {% for movie in movies %}
+        <div class="card">
+            <h3>{{ movie.title }}</h3>
+            <p>Genre: {{ movie.genre }}</p>
+            <p>Rating: ⭐ {{ movie.rating }}</p>
+            <p>Release Date: {{ movie.release_date }}</p>
+        </div>
+    {% empty %}
+        <p>No movies found</p>
+    {% endfor %}
+</div>
+
+</body>
+</html>
